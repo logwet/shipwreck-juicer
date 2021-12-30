@@ -10,9 +10,9 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "n": 12,
-                "p": 0.75,
-                "type": "minecraft:binomial"
+                "min": 4.0,
+                "max": 17.0,
+                "type": "minecraft:uniform"
               }
             }
           ],
