@@ -4,6 +4,7 @@
   "package": "me.logwet.shipwreck_juicer.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "common.badwreck.ShipwreckPiecesMixin"
   ],
   "client": [
     "client.DebugScreenOverlayMixin"
