@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.9-SNAPSHOT'
+    id 'fabric-loom' version '0.10-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -15,10 +15,10 @@ repositories {
     // for more information about repositories.
 
     // Parchment Mappings:
-	maven {
-		name = 'ParchmentMC'
-		url = 'https://maven.parchmentmc.org'
-	}
+    maven {
+        name = 'ParchmentMC'
+        url = 'https://maven.parchmentmc.org'
+    }
 }
 
 loom {
@@ -32,13 +32,15 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     // MojMaps + Parchment Mappings:
-	mappings loom.layered() {
-		officialMojangMappings()
-		parchment("org.parchmentmc.data:${project.parchment_mappings}")
-	}
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:${project.parchment_mappings}")
+    }
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     // modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    include(modImplementation(fabricApi.module("fabric-resource-loader-v0", project.fabric_version)))
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
@@ -88,13 +90,7 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            // add all the jars that should be included when publishing to maven
-            artifact(remapJar) {
-                builtBy remapJar
-            }
-            artifact(sourcesJar) {
-                builtBy remapSourcesJar
-            }
+            from components.java
         }
     }
 
