@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "shipwreck-juicer",
+  "version": "${version}",
+  "accessWidener": "shipwreck-juicer.accesswidener",
+  "name": "Shipwreck Juicer",
+  "description": "Juices Shipwrecks",
+  "authors": [
+    "logwet"
+  ],
+  "contact": {
+    "homepage": "https://github.com/logwet",
+    "sources": "https://github.com/logwet/shipwreck-juicer"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/shipwreck-juicer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.logwet.shipwreck_juicer.ShipwreckJuicer"
+    ],
+    "client": [
+    ],
+    "server": [
+    ]
+  },
+  "mixins": [
+    "shipwreck-juicer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "minecraft": ">=1.16"
+  }
+}
