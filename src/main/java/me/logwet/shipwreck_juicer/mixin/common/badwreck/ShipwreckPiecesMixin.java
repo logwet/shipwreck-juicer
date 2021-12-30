@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(ShipwreckPieces.class)
 public abstract class ShipwreckPiecesMixin {
     @Final @Shadow
-    private static ResourceLocation[] STRUCTURE_LOCATION_BEACHED =
+    private final static ResourceLocation[] STRUCTURE_LOCATION_BEACHED =
             new ResourceLocation[] {
                 new ResourceLocation("shipwreck/with_mast"),
                 new ResourceLocation("shipwreck/sideways_full"),
@@ -22,7 +22,7 @@ public abstract class ShipwreckPiecesMixin {
             };
 
     @Final @Shadow
-    private static ResourceLocation[] STRUCTURE_LOCATION_OCEAN =
+    private final static ResourceLocation[] STRUCTURE_LOCATION_OCEAN =
             new ResourceLocation[] {
                 new ResourceLocation("shipwreck/with_mast"),
                 new ResourceLocation("shipwreck/upsidedown_full"),
